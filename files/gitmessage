@@ -1,0 +1,24 @@
+✨ Add feature/xxx
+
+📝 A brief summary of the changes made
+
+# 📊 List of changes made in bullet points:
+# - 🐛 Bug fix: [brief description of the bug fixed]
+#   - [ ] Change 1
+#   - [ ] Chagne 2
+# - 🌟 Enhancement: [brief description of the enhancement made]
+#   - [ ] Change 1
+#   - [ ] Change 2
+# - 📦 Dependency upgrade: [brief description of the dependency upgraded]
+#   - [ ] Change 1
+#   - [ ] Change 2
+# - 🗑️ Deprecation: [brief description of the deprecated feature/functionality]
+#   - [ ] Change 1
+#   - [ ] Change 2
+
+# 🔗 Related Issues:
+# - [CAB-XXX]: [description of the related issue]
+
+# 👥 Reviewers:
+# - [Reviewer1]
+# - [Reviewer2]

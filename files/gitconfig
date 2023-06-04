@@ -1,0 +1,7 @@
+[user]
+	name = Samuel Bran
+	email = hello@samuelbran.com
+[core]
+	editor = lvim
+[commit]
+	template = /home/sam/.gitmessage
