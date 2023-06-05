@@ -45,6 +45,13 @@
       owner: sam
       group: sam
 
+  - name: copy i3 config
+    copy:
+      src: ./files/i3/config
+      dest: /home/sam/.i3/config
+      owner: sam
+      group: sam
+
   - name: copy p10k.zsh
     copy:
       src: ./files/p10k.zsh
@@ -91,5 +98,26 @@
     copy:
       src: ./files/rofi
       dest: /home/sam/
+      owner: sam
+      group: sam
+
+  - name: copy rofi rose-pine theme
+    copy:
+      src: ./files/local/share/rofi/themes/rose-pine.rofi
+      dest: /home/sam/
+      owner: sam
+      group: sam
+
+  - name: copy fonts
+    copy:
+      src: ./files/fonts/
+      dest: /home/sam/.fonts/
+      owner: sam
+      group: sam
+
+  - name: copy config
+    copy:
+      src: ./files/config/
+      dest: /home/sam/.config/
       owner: sam
       group: sam
