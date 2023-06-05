@@ -19,7 +19,7 @@
 
   - name: copy zshrc
     copy:
-      src: ./files/zshrc
+      src: files/zshrc
       dest: ~/.zshrc
       owner: sam
       group: sam
