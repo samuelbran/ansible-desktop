@@ -27,69 +27,69 @@
   - name: copy Xresources
     copy:
       src: ./files/Xresources
-      dest: ~/.Xresources
+      dest: /home/sam/.Xresources
       owner: sam
       group: sam
 
   - name: copy tmux.conf
     copy:
       src: ./files/tmux.conf
-      dest: ~/.tmux.conf
+      dest: /home/sam/.tmux.conf
       owner: sam
       group: sam
 
   - name: copy profile
     copy:
       src: ./files/profile
-      dest: ~/.profile
+      dest: /home/sam/.profile
       owner: sam
       group: sam
 
   - name: copy p10k.zsh
     copy:
       src: ./files/p10k.zsh
-      dest: ~/.p10k.zsh
+      dest: /home/sam/.p10k.zsh
       owner: sam
       group: sam
 
   - name: copy gitmessage
     copy:
       src: ./files/gitmessage
-      dest: ~/.gitmessage
+      dest: /home/sam/.gitmessage
       owner: sam
       group: sam
 
   - name: copy gitconfig
     copy:
       src: ./files/gitconfig
-      dest: ~/.gitconfig
+      dest: /home/sam/.gitconfig
       owner: sam
       group: sam
 
   - name: copy dmenurc
     copy:
       src: ./files/dmenurc
-      dest: ~/.dmenurc
+      dest: /home/sam/.dmenurc
       owner: sam
       group: sam
 
   - name: copy alacritty.yml
     copy:
       src: ./files/alacritty.yml
-      dest: ~/.alacritty.yml
+      dest: /home/sam/.alacritty.yml
       owner: sam
       group: sam
 
   - name: copy fonts.conf
     copy:
       src: ./files/fonts.conf
-      dest: ~/.fonts.conf
+      dest: /home/sam/.fonts.conf
       owner: sam
       group: sam
 
-  # - name: copy rofi
-  #   copy:
-  #     src: ./files/rofi/
-  #     dest: ~/rofi
-  #     owner: sam
-  #     group: sam
+  - name: copy rofi
+    copy:
+      src: ./files/rofi
+      dest: /home/sam/rofi
+      owner: sam
+      group: sam
