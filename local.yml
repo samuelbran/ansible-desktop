@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  task:
+  - name: install packages
+    package:
+      - kitty
+      - neofetch
+      - discord
+      - flameshot
+      - neovim
+      - polybar
+      - solaar
+      - spotify
+      - tmux
