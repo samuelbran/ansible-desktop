@@ -87,9 +87,9 @@
       owner: sam
       group: sam
 
-  - name: copy themes
+  - name: copy rofi
     copy:
-      src: ./files/themes/
-      dest: ~/.themes/
+      src: ./files/rofi
+      dest: ~/rofi
       owner: sam
       group: sam
