@@ -87,9 +87,9 @@
       owner: sam
       group: sam
 
-  - name: copy rofi
-    copy:
-      src: ./files/rofi/
-      dest: ~/rofi
-      owner: sam
-      group: sam
+  # - name: copy rofi
+  #   copy:
+  #     src: ./files/rofi/
+  #     dest: ~/rofi
+  #     owner: sam
+  #     group: sam
