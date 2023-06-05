@@ -16,3 +16,80 @@
         - solaar
         - spotify
         - tmux
+
+  - name: copy zshrc
+    copy:
+      src: ./files/zshrc
+      dest: ~/.zshrc
+      owner: sam
+      group: sam
+
+  - name: copy Xresources
+    copy:
+      src: ./files/Xresources
+      dest: ~/.Xresources
+      owner: sam
+      group: sam
+
+  - name: copy tmux.conf
+    copy:
+      src: ./files/tmux.conf
+      dest: ~/.tmux.conf
+      owner: sam
+      group: sam
+
+  - name: copy profile
+    copy:
+      src: ./files/profile
+      dest: ~/.profile
+      owner: sam
+      group: sam
+
+  - name: copy p10k.zsh
+    copy:
+      src: ./files/p10k.zsh
+      dest: ~/.p10k.zsh
+      owner: sam
+      group: sam
+
+  - name: copy gitmessage
+    copy:
+      src: ./files/gitmessage
+      dest: ~/.gitmessage
+      owner: sam
+      group: sam
+
+  - name: copy gitconfig
+    copy:
+      src: ./files/gitconfig
+      dest: ~/.gitconfig
+      owner: sam
+      group: sam
+
+  - name: copy dmenurc
+    copy:
+      src: ./files/dmenurc
+      dest: ~/.dmenurc
+      owner: sam
+      group: sam
+
+  - name: copy alacritty.yml
+    copy:
+      src: ./files/alacritty.yml
+      dest: ~/.alacritty.yml
+      owner: sam
+      group: sam
+
+  - name: copy fonts.conf
+    copy:
+      src: ./files/fonts.conf
+      dest: ~/.fonts.conf
+      owner: sam
+      group: sam
+
+  - name: copy themes
+    copy:
+      src: ./files/themes/
+      dest: ~/.themes/
+      owner: sam
+      group: sam
