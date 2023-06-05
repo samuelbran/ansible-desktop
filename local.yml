@@ -90,6 +90,6 @@
   - name: copy rofi
     copy:
       src: ./files/rofi
-      dest: /home/sam/rofi
+      dest: /home/sam/
       owner: sam
       group: sam
