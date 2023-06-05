@@ -3,15 +3,16 @@
   connection: local
   become: true
 
-  task:
+  tasks:
   - name: install packages
     package:
-      - kitty
-      - neofetch
-      - discord
-      - flameshot
-      - neovim
-      - polybar
-      - solaar
-      - spotify
-      - tmux
+      name:
+        - kitty
+        - neofetch
+        - discord
+        - flameshot
+        - neovim
+        - polybar
+        - solaar
+        - spotify
+        - tmux
