@@ -1,3 +1,35 @@
+export MOAR='--style=github-dark --wrap --statusbar=bold --no-linenumbers'
+export PAGER=moar
+export MANPAGER=moar
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"
+
+export PATH=$HOME/.config/rofi/scripts:$PATH
+
+alias code='lvim'
+alias p='cd ~/Projects/'
+alias dl='cd ~/Downloads/'
+alias dt='cd ~/Desktop/'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ea='code ~/.alacritty.yml'
+alias ez='code ~/.zshrc'
+alias ep='code ~/.config/polybar/config.ini'
+alias ed='code ~/.config/dunst/dunstrc'
+alias e3='code ~/.i3/config'
+alias ex='code ~/.Xresources'
+alias el='code ~/.config/lvim/config.lua'
+alias et='code ~/.tmux.conf'
+alias ek='code ~/.config/kitty'
+alias t='tmux attach'
+alias open='pcmanfm'
+alias cronlogs='sudo journalctl | grep "/root/backup.sh"'
+alias checkdisks='df -h'
+alias checkusage='sudo ncdu / -x'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -41,7 +73,7 @@ ZSH_THEME="spaceship"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -72,6 +104,7 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git 
+  man 
   colored-man-pages 
   command-not-found 
   heroku 
@@ -82,6 +115,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=15,bold"
+less_termcap[so]="${fg_bold[black]}${bg[cyan]}"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -107,34 +142,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=15,bold"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
-
-export PATH=$HOME/.config/rofi/scripts:$PATH
-
-alias code='lvim'
-alias p='cd ~/Projects/'
-alias dl='cd ~/Downloads/'
-alias dt='cd ~/Desktop/'
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ea='code ~/.alacritty.yml'
-alias ez='code ~/.zshrc'
-alias ep='code ~/.config/polybar/config.ini'
-alias ed='code ~/.config/dunst/dunstrc'
-alias e3='code ~/.i3/config'
-alias ex='code ~/.Xresources'
-alias el='code ~/.config/lvim/config.lua'
-alias et='code ~/.tmux.conf'
-alias ek='code ~/.config/kitty'
-alias t='tmux attach'
-alias open='pcmanfm'
-alias cronlogs='sudo journalctl | grep "/root/backup.sh"'
-alias checkdisks='df -h'
-alias checkusage='sudo ncdu / -x'
-
-less_termcap[so]="${fg_bold[black]}${bg[cyan]}"

@@ -16,6 +16,7 @@
         - solaar
         - spotify
         - tmux
+        - moar
 
   - name: copy zshrc
     copy:
