@@ -104,13 +104,13 @@
   - name: copy rofi rose-pine theme
     copy:
       src: ./files/local/share/rofi/themes/rose-pine.rofi
-      dest: /home/sam/
+      dest: /home/sam/local/share/rofi/themes/
       owner: sam
       group: sam
 
   - name: copy fonts
     copy:
-      src: ./files/fonts/
+      src: ./files/fonts
       dest: /home/sam/.fonts/
       owner: sam
       group: sam
@@ -119,5 +119,12 @@
     copy:
       src: ./files/config/
       dest: /home/sam/.config/
+      owner: sam
+      group: sam
+
+  - name: copy oh my zsh
+    copy:
+      src: ./files/oh-my-zsh
+      dest: /home/sam/.oh-my-zsh
       owner: sam
       group: sam
