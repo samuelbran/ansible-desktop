@@ -34,8 +34,8 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start program launcher
-bindsym $mod+space exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
-bindsym $mod+0 exec --no-startup-id ~/.config/rofi/scripts/powermenu_t4
+bindsym $mod+space exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+0 exec --no-startup-id ~/.config/rofi/scripts/powermenu_t2
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
