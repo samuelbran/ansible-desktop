@@ -179,4 +179,4 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
-@theme "~/.local/share/rofi/themes/rose-pine.rofi"
+@theme "~/.local/share/rofi/themes/rose-pine.rasi"
