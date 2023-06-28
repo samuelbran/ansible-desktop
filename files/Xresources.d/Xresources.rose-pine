@@ -8,7 +8,7 @@ Xft.lcdfilter: lcddefault
 
 XTerm*background:        #191724
 XTerm*foreground:        #e0def4
-XTerm*pointerColor:      #f6c177
+XTerm*pointerColor:      #908caa
 XTerm*faceName:          Fixed
 XTerm*faceSize:          11
 XTerm*reverseVideo:      on
@@ -18,9 +18,9 @@ XTerm*selectToClipboard: true
 *foreground:                      #e0def4
 *fading:                          8
 *fadeColor:                       black
-*cursorColor:                     #f6c177
-*pointerColorBackground:          #181724
-*pointerColorForeground:          #f6c177
+*cursorColor:                     #908caa
+*pointerColorBackground:          #6e6a86
+*pointerColorForeground:          #e0def4
 
 !! black dark/light
 *color0:                          #191724
@@ -31,7 +31,7 @@ XTerm*selectToClipboard: true
 *color9:                          #b4637a
 
 !! green dark/light
-*color2:                          #31748f
+*color2:                          #3e8fb0
 *color10:                         #286983
 
 !! yellow dark/light
@@ -40,7 +40,7 @@ XTerm*selectToClipboard: true
 
 !! blue dark/light
 *color4:                          #ebbcba
-*color12:                         #d7827e
+*color12:                         #ea9a97
 
 !! magenta dark/light
 *color5:                          #c4a7e7
@@ -51,9 +51,9 @@ XTerm*selectToClipboard: true
 *color14:                         #56949f
 
 !! white dark/light
-*color7:                          #e0def4
-*color15:                         #575279
-*custom:                          #26233a
+*color7:                          #f4ede8
+*color15:                         #dfdad9
+*custom:                          #403d52
 *custom2:                         #6e6a86
 
 Xcursor.theme: elementary

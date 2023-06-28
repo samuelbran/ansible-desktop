@@ -27,7 +27,7 @@
 
   - name: copy Xresources
     copy:
-      src: ./files/Xresources
+      src: ./files/Xresources.d/Xresources.rasmus
       dest: /home/sam/.Xresources
       owner: sam
       group: sam
@@ -95,9 +95,9 @@
       owner: sam
       group: sam
 
-  - name: copy rofi rose-pine theme
+  - name: copy rofi themes
     copy:
-      src: ./files/local/share/rofi/themes/rose-pine.rofi
+      src: ./files/local/share/rofi/themes/
       dest: /home/sam/local/share/rofi/themes/
       owner: sam
       group: sam
