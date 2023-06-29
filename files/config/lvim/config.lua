@@ -3,12 +3,10 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 vim.opt.relativenumber = true
--- vim.api.nvim_create_autocmd('VimEnter', { command = "NvimTreeFocus" })
 vim.api.nvim_set_option_value("colorcolumn", "80", {})
--- vim.opt.bg = 'light'
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "rose-pine"
-lvim.transparent_window = true
+lvim.colorscheme = "rasmus"
+-- lvim.transparent_window = true
 
 lvim.builtin.nvimtree.setup.view = {
   side = 'right',
@@ -16,7 +14,20 @@ lvim.builtin.nvimtree.setup.view = {
 }
 
 lvim.plugins = {
-  { "shaunsingh/nord.nvim" },
+  { "kvrohit/rasmus.nvim" },
+  {
+    "Pocco81/true-zen.nvim",
+    config = function()
+      require("true-zen").setup {
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+  },
+  {
+    "Fymyte/rasi.vim",
+    ft = 'rasi',
+  },
   {
     "iamcco/markdown-preview.nvim",
     config = function()
