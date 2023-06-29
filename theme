@@ -9,6 +9,8 @@ PS3="Pick a number:"
 
 selectedTheme=''
 indicator='➡'
+files="$HOME/ansible-desktop/files"
+config="$HOME/.config"
 
 # https://en.wikipedia.org/wiki/ANSI_escape_code
 # https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
@@ -21,11 +23,18 @@ select option in "${!options[@]}"; do
   break
 done
 
+# Copy matching Xresources file
+
 cp \
-  "$HOME/ansible-desktop/files/Xresources.d/Xresources.$selectedTheme" \
+  "$files/Xresources.d/Xresources.$selectedTheme" \
   "$HOME/.Xresources"
 
 xrdb ~/.Xresources
 
-echo -e "$indicator Press ${color}Super+Shift+R${nc} to reload colors"
+# TODO modify $config/rofi/launchers/type-1/shared/colors.rasi
+# TODO modify $config/rofi/powermenu/type-2/shared/colors.rasi
+# TODO modify $config/kitty/color.conf
+
+echo -e "$indicator Press ${color}Super+Shift+R${nc} to reload i3"
+echo -e "$indicator Press ${color}Ctrl+Shift+F5${nc} to reload kitty"
 echo "✨ All Done."
