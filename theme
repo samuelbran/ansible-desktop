@@ -23,8 +23,13 @@ select option in "${!options[@]}"; do
   break
 done
 
-# Copy matching Xresources file
+# Make a backup of Xresources if it does not exists
+if ! [ -f $HOME/.Xresources-bkp ]
+then
+  cp $HOME/.Xresources $HOME/.Xresources-bkp
+fi
 
+# Copy matching Xresources file
 cp \
   "$files/Xresources.d/Xresources.$selectedTheme" \
   "$HOME/.Xresources"
