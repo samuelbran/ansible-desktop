@@ -1,0 +1,31 @@
+#!/bin/bash
+
+declare -A options
+options['Rose Pine']='rose-pine'
+options['Rasmus']='rasmus'
+
+echo "Available themes:"
+PS3="Pick a number:"
+
+selectedTheme=''
+indicator='➡'
+
+# https://en.wikipedia.org/wiki/ANSI_escape_code
+# https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+color='\033[3;34m' # Blue
+nc='\033[0;0m' # No color
+
+select option in "${!options[@]}"; do
+  echo -e "$indicator $option"
+  selectedTheme=${options[${option}]}
+  break
+done
+
+cp \
+  "$HOME/ansible-desktop/files/Xresources.d/Xresources.$selectedTheme" \
+  "$HOME/.Xresources"
+
+xrdb ~/.Xresources
+
+echo -e "$indicator Press ${color}Super+Shift+R${nc} to reload colors"
+echo "✨ All Done."
