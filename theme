@@ -36,10 +36,23 @@ cp \
 
 xrdb ~/.Xresources
 
-# TODO modify $config/rofi/launchers/type-1/shared/colors.rasi
-# TODO modify $config/rofi/powermenu/type-2/shared/colors.rasi
-# TODO modify $config/kitty/color.conf
+# modify Rofi config
 
-echo -e "$indicator Press ${color}Super+Shift+R${nc} to reload i3"
-echo -e "$indicator Press ${color}Ctrl+Shift+F5${nc} to reload kitty"
+rofiNewThemePath="@import \"~/.config/rofi/colors/$selectedTheme.rasi\""
+launchers="$config/rofi/launchers"
+powermenu="$config/rofi/powermenu"
+
+sed -i '$d' $launchers/type-1/shared/colors.rasi
+echo $rofiNewThemePath >> $launchers/type-1/shared/colors.rasi
+
+sed -i '$d' $powermenu/type-2/shared/colors.rasi
+echo $rofiNewThemePath >> $powermenu/type-2/shared/colors.rasi
+
+# modify $config/kitty/color.conf
+sed -i '$d' $config/kitty/color.conf
+echo "include ./colors/$selectedTheme.conf" >> $config/kitty/color.conf
+
+# Reload i3 and kitty
+xdotool key super+shift+r
+echo -e "🐱 To reload kitty press$color Ctrl+Shift+F5 $nc"
 echo "✨ All Done."
