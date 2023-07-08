@@ -3,6 +3,7 @@
 declare -A options
 options['Rose Pine']='rose-pine'
 options['Rasmus']='rasmus'
+options['Nord']='nord'
 
 echo "Available themes:"
 PS3="Pick a number:"
@@ -52,6 +53,13 @@ echo "@theme \"~/.local/share/rofi/themes/$selectedTheme.rasi\"" \
 
 # KITTY
 kitty="$config/kitty"
+
+# copy $selectedTheme.conf if does not exists in kitty's colors dir
+if ! [ -f "$kitty/colors/$selectedTheme.conf" ]
+then
+  cp "$files/config/kitty/colors/$selectedTheme.conf" \
+    "$kitty/colors/$selectedTheme.conf"
+fi
 
 # $config/kitty/color.conf
 sed -i '$d' $kitty/color.conf
