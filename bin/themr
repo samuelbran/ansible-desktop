@@ -82,6 +82,12 @@ xdotool key super+shift+d
 
 # ----------------------------------------------------------------------------
 
+# NEOVIM
+sed -i '$d' $HOME/.config/lvim/config.lua
+echo "lvim.colorscheme = \"$selectedTheme\"" >> $HOME/.config/lvim/config.lua
+
+# ----------------------------------------------------------------------------
+
 # Reload i3
 xdotool key super+shift+r
 
