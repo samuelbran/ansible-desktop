@@ -88,8 +88,8 @@ echo "lvim.colorscheme = \"$selectedTheme\"" >> $HOME/.config/lvim/config.lua
 
 # ----------------------------------------------------------------------------
 
-# Reload i3
-xdotool key super+shift+r
+# Reload Polybar
+xdotool key super+shift+m
 
 # https://en.wikipedia.org/wiki/ANSI_escape_code
 # https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
