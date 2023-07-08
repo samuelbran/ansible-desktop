@@ -53,6 +53,9 @@ kitty="$config/kitty"
 sed -i '$d' $kitty/color.conf
 echo "include ./colors/$selectedTheme.conf" >> $kitty/color.conf
 
+#reload Kitty
+xdotool search --class 'kitty' key ctrl+shift+F5
+
 # ----------------------------------------------------------------------------
 
 # DUNST
@@ -62,16 +65,18 @@ dunstrcd="$files/config/dunst/dunstrc.d"
 cp "$dunstrcd/00-colors_$selectedTheme.conf" \
  "$config/dunst/dunstrc.d/00-colors.conf" 
 
+# reload dunst
+xdotool key super+shift+d
+
 # ----------------------------------------------------------------------------
 
-# Reload i3 and dunst
+# Reload i3
 xdotool key super+shift+r
-xdotool key super+shift+d
 
 # https://en.wikipedia.org/wiki/ANSI_escape_code
 # https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
 color='\033[3;34m' # Blue
 nc='\033[0;0m' # No color
 
-echo -e "🐱 To reload kitty press$color Ctrl+Shift+F5 $nc"
+echo -e "✨ $color All done. $nc"
 
