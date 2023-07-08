@@ -62,6 +62,8 @@ dunstrcd="$files/config/dunst/dunstrc.d"
 cp "$dunstrcd/00-colors_$selectedTheme.conf" \
  "$config/dunst/dunstrc.d/00-colors.conf" 
 
+# ----------------------------------------------------------------------------
+
 # Reload i3 and dunst
 xdotool key super+shift+r
 xdotool key super+shift+d
@@ -72,4 +74,4 @@ color='\033[3;34m' # Blue
 nc='\033[0;0m' # No color
 
 echo -e "🐱 To reload kitty press$color Ctrl+Shift+F5 $nc"
-notify-send -u normal -a "Theme" "All done."
+

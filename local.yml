@@ -46,6 +46,13 @@
       owner: sam
       group: sam
 
+  - name: copy ranger default colorscheme
+    copy:
+      src: ./files/config/ranger/colorschemes/default.py
+      dest: /home/sam/.config/ranger/colorschemes/
+      owner: sam
+      group: sam
+
   - name: copy i3 config
     copy:
       src: ./files/i3/config
