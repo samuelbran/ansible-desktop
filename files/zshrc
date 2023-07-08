@@ -7,7 +7,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
 
-export PATH=$HOME/.config/rofi/scripts:$PATH
+export PATH=$HOME/.config/rofi/scripts:$HOME/ansible-desktop/bin:$PATH
 
 alias code='lvim'
 alias p='cd ~/Projects/'
@@ -29,6 +29,7 @@ alias open='pcmanfm'
 alias cronlogs='sudo journalctl | grep "/root/backup.sh"'
 alias checkdisks='df -h'
 alias checkusage='sudo ncdu / -x'
+alias edhosts='sudo lvim /etc/hosts'
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
