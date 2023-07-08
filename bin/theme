@@ -44,6 +44,10 @@ echo $rofiNewThemePath >> $launchers/type-1/shared/colors.rasi
 sed -i '$d' $powermenu/type-2/shared/colors.rasi
 echo $rofiNewThemePath >> $powermenu/type-2/shared/colors.rasi
 
+sed -i '$d' $config/rofi/config.rasi
+echo "@theme \"~/.local/share/rofi/themes/$selectedTheme.rasi\"" \
+  >> $config/rofi/config.rasi
+
 # ----------------------------------------------------------------------------
 
 # KITTY
