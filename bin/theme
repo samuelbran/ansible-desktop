@@ -12,11 +12,6 @@ indicator='➡'
 files="$HOME/ansible-desktop/files"
 config="$HOME/.config"
 
-# https://en.wikipedia.org/wiki/ANSI_escape_code
-# https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
-color='\033[3;34m' # Blue
-nc='\033[0;0m' # No color
-
 select option in "${!options[@]}"; do
   echo -e "$indicator $option"
   selectedTheme=${options[${option}]}
@@ -36,8 +31,9 @@ cp \
 
 xrdb ~/.Xresources
 
-# modify Rofi config
+# ----------------------------------------------------------------------------
 
+# ROFI
 rofiNewThemePath="@import \"~/.config/rofi/colors/$selectedTheme.rasi\""
 launchers="$config/rofi/launchers"
 powermenu="$config/rofi/powermenu"
@@ -48,11 +44,32 @@ echo $rofiNewThemePath >> $launchers/type-1/shared/colors.rasi
 sed -i '$d' $powermenu/type-2/shared/colors.rasi
 echo $rofiNewThemePath >> $powermenu/type-2/shared/colors.rasi
 
-# modify $config/kitty/color.conf
-sed -i '$d' $config/kitty/color.conf
-echo "include ./colors/$selectedTheme.conf" >> $config/kitty/color.conf
+# ----------------------------------------------------------------------------
 
-# Reload i3 and kitty
+# KITTY
+kitty="$config/kitty"
+
+# $config/kitty/color.conf
+sed -i '$d' $kitty/color.conf
+echo "include ./colors/$selectedTheme.conf" >> $kitty/color.conf
+
+# ----------------------------------------------------------------------------
+
+# DUNST
+dunstrcd="$files/config/dunst/dunstrc.d"
+
+# $config/dunst/dunstrc.d/00-colors.conf
+cp "$dunstrcd/00-colors_$selectedTheme.conf" \
+ "$config/dunst/dunstrc.d/00-colors.conf" 
+
+# Reload i3 and dunst
 xdotool key super+shift+r
+xdotool key super+shift+d
+
+# https://en.wikipedia.org/wiki/ANSI_escape_code
+# https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+color='\033[3;34m' # Blue
+nc='\033[0;0m' # No color
+
 echo -e "🐱 To reload kitty press$color Ctrl+Shift+F5 $nc"
-echo "✨ All Done."
+notify-send -u normal -a "Theme" "All done."
