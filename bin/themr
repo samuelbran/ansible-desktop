@@ -28,7 +28,7 @@ fi
 # Copy matching Xresources file
 cp \
   "$files/Xresources.d/Xresources.$selectedTheme" \
-  "$HOME/.Xresources"
+  "$HOME/.Xresources.d/colors"
 
 xrdb ~/.Xresources
 

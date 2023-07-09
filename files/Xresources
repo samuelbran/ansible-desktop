@@ -1,3 +1,5 @@
+#include ".Xresources.d/colors"
+
 Xft.dpi:       96
 Xft.antialias: true
 Xft.hinting:   true
@@ -6,55 +8,10 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*background:        #191724
-XTerm*foreground:        #e0def4
-XTerm*pointerColor:      #f6c177
-XTerm*faceName:          Fixed
+XTerm*faceName:          Monospace
 XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
-
-*background:                      #191724
-*foreground:                      #e0def4
-*fading:                          8
-*fadeColor:                       black
-*cursorColor:                     #f6c177
-*pointerColorBackground:          #181724
-*pointerColorForeground:          #f6c177
-
-!! black dark/light
-*color0:                          #191724
-*color8:                          #faf4ed
-
-!! red dark/light
-*color1:                          #eb6f92
-*color9:                          #b4637a
-
-!! green dark/light
-*color2:                          #31748f
-*color10:                         #286983
-
-!! yellow dark/light
-*color3:                          #f6c177
-*color11:                         #ea9d34
-
-!! blue dark/light
-*color4:                          #ebbcba
-*color12:                         #d7827e
-
-!! magenta dark/light
-*color5:                          #c4a7e7
-*color13:                         #907aa9
-
-!! cyan dark/light
-*color6:                          #9ccfd8
-*color14:                         #56949f
-
-!! white dark/light
-*color7:                          #e0def4
-*color15:                         #575279
-*custom:                          #26233a
-*custom2:                         #6e6a86
 
 Xcursor.theme: elementary
 Xcursor.size:                     0

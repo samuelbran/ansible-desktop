@@ -27,8 +27,15 @@
 
   - name: copy Xresources
     copy:
-      src: ./files/Xresources.d/Xresources.rasmus
+      src: ./files/Xresources
       dest: /home/sam/.Xresources
+      owner: sam
+      group: sam
+
+  - name: copy Xresources colors
+    copy:
+      src: ./files/Xresources.d/Xresources.rasmus
+      dest: /home/sam/.Xresources.d/colors
       owner: sam
       group: sam
 
