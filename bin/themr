@@ -4,6 +4,7 @@ declare -A options
 options['Rose Pine']='rose-pine'
 options['Rasmus']='rasmus'
 options['Nord']='nord'
+options['Nordic']='nordic'
 
 echo "Available themes:"
 PS3="Pick a number:"
@@ -39,11 +40,25 @@ rofiNewThemePath="@import \"~/.config/rofi/colors/$selectedTheme.rasi\""
 launchers="$config/rofi/launchers"
 powermenu="$config/rofi/powermenu"
 
+# copy $selectedTheme.rasi if does not exists in rofi's colors dir
+if ! [ -f "$config/rofi/colors/$selectedTheme.rasi" ]
+then
+  cp "$files/config/rofi/colors/$selectedTheme.rasi" \
+    "$config/rofi/colors/"
+fi
+
 sed -i '$d' $launchers/type-1/shared/colors.rasi
 echo $rofiNewThemePath >> $launchers/type-1/shared/colors.rasi
 
 sed -i '$d' $powermenu/type-2/shared/colors.rasi
 echo $rofiNewThemePath >> $powermenu/type-2/shared/colors.rasi
+
+# copy $selectedTheme.rasi if does not exists in rofi's themes dir
+if ! [ -f "$HOME/.local/share/rofi/themes/$selectedTheme.rasi" ]
+then
+  cp "$files/local/share/rofi/themes/$selectedTheme.rasi" \
+    "$HOME/.local/share/rofi/themes/"
+fi
 
 sed -i '$d' $config/rofi/config.rasi
 echo "@theme \"~/.local/share/rofi/themes/$selectedTheme.rasi\"" \
@@ -58,7 +73,7 @@ kitty="$config/kitty"
 if ! [ -f "$kitty/colors/$selectedTheme.conf" ]
 then
   cp "$files/config/kitty/colors/$selectedTheme.conf" \
-    "$kitty/colors/$selectedTheme.conf"
+    "$kitty/colors/"
 fi
 
 # $config/kitty/color.conf
