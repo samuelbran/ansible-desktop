@@ -66,7 +66,7 @@ sed -i '$d' $kitty/color.conf
 echo "include ./colors/$selectedTheme.conf" >> $kitty/color.conf
 
 #reload Kitty
-xdotool search --class 'kitty' key ctrl+shift+F5
+xdotool search --class "kitty" key --window %@ ctrl+shift+F5
 
 # ----------------------------------------------------------------------------
 
