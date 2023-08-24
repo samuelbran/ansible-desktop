@@ -59,7 +59,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # Start Applications
 bindsym $mod+Ctrl+b exec kitty -e 'bmenu'
 #bindsym $mod+F2 exec palemoon
-bindsym $mod+Shift+Return exec google-chrome-stable
+bindsym $mod+Shift+Return exec --no-startup-id google-chrome-stable
 bindsym $mod+e exec nautilus
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -381,7 +381,8 @@ bindsym $mod+Shift+m exec polybar-msg cmd restart;
 #############################
 
 # Set inner/outer gaps
-gaps inner 6
+gaps inner 24
+# gaps outer 50
 # gaps horizontal 6
 # gaps bottom 6
 
@@ -434,6 +435,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
