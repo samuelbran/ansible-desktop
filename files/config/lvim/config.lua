@@ -5,15 +5,35 @@
 vim.opt.relativenumber = true
 vim.api.nvim_set_option_value("colorcolumn", "80", {})
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "rasmus"
 -- lvim.transparent_window = true
+vim.keymap.set("x", "<leader>p", "\"_dP")
 
 lvim.builtin.nvimtree.setup.view = {
   side = 'right',
-  width = 40
+  width = 36
 }
 
 lvim.plugins = {
+  {
+    "AlexvZyl/nordic.nvim",
+    config = function()
+      require("nordic").setup {
+        transparent_bg = true,
+        override = {
+          TelescopePromptBorder = { bg = '#1d2129', fg = '#191c24' },
+          TelescopePromptNormal = { bg = '#1d2129' },
+          NvimTreeWinSeparator = { fg = '#242933', bg = '#191c24' },
+          NvimTreeGitDirty = { fg = '#D08770' },
+          NvimTreeGitNew = { fg = '#A3BE8C' },
+          NvimTreeGitDeleted = { fg = '#BF616A' },
+          NvimTreeGitStaged = { fg = '#5E81AC' },
+          Visual = { bg = '#2E3440' },
+          WinSeparator = { fg = '#242933', bg = '#191c24' }
+        },
+      }
+    end,
+  },
+  { "gbprod/nord.nvim" },
   { "kvrohit/rasmus.nvim" },
   {
     "Pocco81/true-zen.nvim",
@@ -69,3 +89,26 @@ formatters.setup {
     filetypes = { "typescript", "typescriptreact" },
   },
 }
+
+lvim.builtin.alpha.dashboard.section.header.val = {
+  [[                                        ]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠒⠖⢶⣶⣿⣿⣿⣿⣿⣷⣶⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⣿⣿⣿⡿⣿⣿⣿⣿⣿⡾⣶⣄⣀⣰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣴⣶⣿⣥⠞⠃⠁⠀⠉⠙⢛⠙⢿⡎⣿⣾⣿⣷⣶⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢁⠈⢁⠀⡀⠀⠀⠀⠀⠀⠀⠘⢿⣽⣿⠿⠿⡾⣎⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠈⣉⡉⠁⣙⡉⢢⢠⡀⠀⠀⠀⠀⠙⣿⣿⣖⣽⡿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⡝⠀⡀⠰⢀⠀⠀⠙⢶⣤⣴⣤⡀⣿⣽⣿⣿⡟⣻⢃⠀⢀⣤⣤⣄⣀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⣀⣀⣀⡀⠀⢠⣯⡠⠄⣠⢴⣨⠀⠀⠀⠀⠙⣿⣿⣿⡽⣻⣻⡹⣿⣿⡟⠤⢽⣿⣿⣿⣿⣿⣦⡤]],
+  [[⠀⡠⢂⢽⣋⣿⣿⣻⣿⡿⣴⣽⣷⣾⣧⣷⣂⢄⠀⠀⠀⠀⠙⠷⣼⣽⣼⣽⣯⣿⣧⣾⣿⣿⣿⣿⣿⠿⠋⠀]],
+  [[⠘⠃⠐⠺⠻⢻⣿⣿⠿⠳⢩⢻⢽⢟⡽⣻⠟⡛⣄⡄⠀⠀⠀⠀⣿⣾⣿⣿⣿⣟⠆⠀⠁⠉⠛⠉⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠉⠀⠋⠁⠀⠸⣿⡿⠛⣲⣻⢁⠀⠙⠀⠹⠑⢀⠀⠀⢻⣿⣿⣿⣏⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡟⣼⣿⡞⣼⡀⠀⠀⠀⠀⠈⠁⠳⡐⢿⣿⣿⣟⣠⠤⢄⡀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠿⣶⣿⠟⢻⣅⣿⠖⢀⠀⠀⠀⠀⠀⠀⠉⠛⠉⣈⣉⠢⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠩⠿⠼⣮⣽⣷⣷⣠⣄⣀⡀⠀⠀⡀⣴⣾⣳⠖⠒⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠈⠉⠛⢟⣥⡮⣿⢿⣿⠋⢳⣯⣏⡣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠘⠶⢖⡴⣖⠛⠉⠤⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+  [[                                        ]],
+}
+
+-- do not edit beyond this line
+lvim.colorscheme = "nordic"
